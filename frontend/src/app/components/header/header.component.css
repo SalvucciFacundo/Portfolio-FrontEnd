@@ -1,0 +1,65 @@
+.bg-color{
+    background-color: black;
+}
+.list-group{
+    --bs-list-group-bg:transparent;
+}
+.linkedin{
+    text-decoration: none;
+    color: white;
+}
+.twitter{
+    text-decoration: none;
+    color: white;
+}
+.github{
+    text-decoration: none;
+    color: white;
+}
+.userLock{
+    text-decoration: none;
+    color: white;
+}
+.linkedin:hover {
+    --bs-text-opacity: 1;
+    color: blue !important;
+}
+.twitter:hover{
+    --bs-text-opacity: 1;
+    color: aqua !important;
+}
+.github:hover{
+    --bs-text-opacity: 1;
+    color: green !important;
+}
+.userLock:hover{
+    --bs-text-opacity: 1;
+    color: red !important;
+}
+.imagenBanner{
+    width: 100%;
+    height: 70vh;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size:cover;
+}
+.imgPerfil{
+    height: 40%;
+    width: 25%;
+   z-index: 1;
+   position: relative;
+   margin-top: 300px;
+   margin-left: 20px;
+  
+  }
+  .nombre{
+      margin-left: -15px;
+  }
+  .acerca{
+  margin-top: -125px;
+  }
+  .textoFondo{
+      background-color: grey;
+      text-align: center;
+  }

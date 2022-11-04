@@ -1,0 +1,62 @@
+<div
+class="modal fade"
+id="loginModal"
+tabindex="-1"
+aria-labelledby="exampleModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content fondoModal">
+    <div class="modal-header">
+      <h1 class="modal-title fs-5" id="exampleModalLabel">
+        Iniciar sesión
+      </h1>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Cancelar"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Usuario</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            placeholder="ejemplo@ejemplo.com"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label"
+            >Contraseña</label
+          >
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-secondary"
+        data-bs-dismiss="modal"
+        data-bs-toggle="modal"
+        data-bs-target="#registro"
+        class="fa-solid fa-user-lock text-white"
+      >
+        Registrase
+      </button>
+
+      <button type="submit" class="btn btn-primary">Ingresar</button>
+    </div>
+  </div>
+</div>
+</div>
