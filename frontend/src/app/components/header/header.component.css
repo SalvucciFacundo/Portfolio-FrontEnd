@@ -1,65 +1,39 @@
-.bg-color{
-    background-color: black;
-}
-.list-group{
-    --bs-list-group-bg:transparent;
-}
-.linkedin{
-    text-decoration: none;
-    color: white;
-}
-.twitter{
-    text-decoration: none;
-    color: white;
-}
-.github{
-    text-decoration: none;
-    color: white;
-}
-.userLock{
-    text-decoration: none;
-    color: white;
-}
-.linkedin:hover {
-    --bs-text-opacity: 1;
-    color: blue !important;
-}
-.twitter:hover{
-    --bs-text-opacity: 1;
-    color: aqua !important;
-}
-.github:hover{
-    --bs-text-opacity: 1;
-    color: green !important;
-}
-.userLock:hover{
-    --bs-text-opacity: 1;
-    color: red !important;
-}
-.imagenBanner{
-    width: 100%;
+header{
     height: 70vh;
-    position: absolute;
-    background-repeat: no-repeat;
-    background-size: cover;
-    -webkit-background-size:cover;
 }
+
+.drop{
+    background: #C9D6FF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    font-size: larger;
+}
+.iconos{
+    text-decoration: none;
+    color: white;
+    margin-right: 10px;
+   
+}
+.iconos:hover {
+    opacity: 0.2;
+}
+
 .imgPerfil{
-    height: 40%;
-    width: 25%;
-   z-index: 1;
-   position: relative;
-   margin-top: 300px;
-   margin-left: 20px;
-  
+    height: 90%;
+    width: 90%;
+    margin-left:15px;
   }
-  .nombre{
-      margin-left: -15px;
-  }
-  .acerca{
-  margin-top: -125px;
-  }
-  .textoFondo{
+.textoFondo{
       background-color: grey;
       text-align: center;
   }
+.acerca{
+   background: none;
+   border: none;
+}
+
+.cardAlineamiento{
+    margin-top: 3%;
+    margin-left: -2%;
+}

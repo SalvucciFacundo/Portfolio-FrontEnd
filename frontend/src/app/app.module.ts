@@ -10,9 +10,6 @@ import { ExperienciaComponent } from './components/experiencia/experiencia.compo
 import { EducacionComponent } from './components/educacion/educacion.component';
 import { SkillComponent } from './components/skill/skill.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
-import { MenuComponent } from './components/menu/menu.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { AcercaComponent } from './components/acerca/acerca.component';
 import { LoginComponent } from './components/modals/login/login.component';
 import { RegisterComponent } from './components/modals/register/register.component';
 
@@ -28,9 +25,6 @@ import { RegisterComponent } from './components/modals/register/register.compone
     EducacionComponent,
     SkillComponent,
     ProyectosComponent,
-    MenuComponent,
-    DashboardComponent,
-    AcercaComponent,
     LoginComponent,
     RegisterComponent,
   ],

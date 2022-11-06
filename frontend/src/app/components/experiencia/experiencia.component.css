@@ -1,0 +1,13 @@
+.textoFondo{
+    background-color: grey;
+    text-align: center;
+}
+.sombreado:hover{
+    opacity: 0.3;
+}
+.ancho{
+    width: 15%;
+ }
+.fondoCard{
+    background: none;
+}

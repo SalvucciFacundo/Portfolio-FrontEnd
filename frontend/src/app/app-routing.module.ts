@@ -6,12 +6,13 @@ import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { SkillComponent } from './components/skill/skill.component';
 
 const routes: Routes = [
-  {path: '',redirectTo: 'experiencia', pathMatch:'full'},
+  
+  {path: '',redirectTo: 'educacion', pathMatch:'full'},
   {path: 'experiencia', component: ExperienciaComponent},
   {path: 'educacion', component: EducacionComponent},
   {path: 'skills', component: SkillComponent},
   {path: 'proyectos', component: ProyectosComponent},
-  { path: '**', redirectTo: 'experiencia' }
+  { path: '**', redirectTo: 'educacion' }
 ];
 
 @NgModule({
