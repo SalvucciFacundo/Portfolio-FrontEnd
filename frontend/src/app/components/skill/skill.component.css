@@ -34,3 +34,7 @@
 @keyframes animate-positive {
     0% { width: 0%; }
 }
+.textoFondo{
+    background-color: grey;
+    text-align: center;
+}
