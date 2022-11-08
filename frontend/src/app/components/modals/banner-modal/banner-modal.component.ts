@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-banner',
+  selector: 'app-banner-modal',
   templateUrl: './banner-modal.component.html',
   styleUrls: ['./banner-modal.component.css']
 })

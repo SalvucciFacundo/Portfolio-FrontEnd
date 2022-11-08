@@ -1,7 +1,15 @@
 <div class="container">
     <h1 class="textoFondo"><b>Experiencia</b></h1>
     <div class="editarNombre" *ngIf="usuarioLogeado=='true'">
-      <a href=""><i class="fa-solid fa-square-pen fa-2x" style="color:red;"></i></a>
+      <a href="" data-bs-toggle="modal" data-bs-target="#experienciaModalAdd">
+        <i class="fa-solid fa-plus fa-2x" style="color:green; margin-right: 5px;"></i>
+      </a>
+      <a href="" data-bs-toggle="modal" data-bs-target="#experienciaModalEdit">
+        <i class="fa-solid fa-square-pen fa-2x" style="color:blue;margin-right: 5px;"></i>
+      </a>
+      <a href="" data-bs-toggle="modal" data-bs-target="#experienciaModalDelete">
+        <i class="fa-solid fa-trash fa-2x" style="color:red;"></i>
+      </a>
     </div>
     <div class="row mt-5 sombreado" *ngFor="let items of expe">
       <div class="col-4 ancho">
@@ -18,4 +26,6 @@
         </div>
       </div>
     </div>
-
+<app-experiencia-modal-add></app-experiencia-modal-add>
+<app-experiencia-modal-edit></app-experiencia-modal-edit>
+<app-experiencia-modal-delete></app-experiencia-modal-delete>

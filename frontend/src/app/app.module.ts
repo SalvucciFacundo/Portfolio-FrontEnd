@@ -26,6 +26,9 @@ import { EducacionModalDeleteComponent } from './components/modals/educacion-mod
 import { ExperienciaModalEditComponent } from './components/modals/experiencia-modals/experiencia-modal-edit/experiencia-modal-edit.component';
 import { ExperienciaModalAddComponent } from './components/modals/experiencia-modals/experiencia-modal-add/experiencia-modal-add.component';
 import { ExperienciaModalDeleteComponent } from './components/modals/experiencia-modals/experiencia-modal-delete/experiencia-modal-delete.component';
+import { SkillModalDeleteComponent } from './components/modals/skill-modals/skill-modal-delete/skill-modal-delete.component';
+import { SkillModalAddComponent } from './components/modals/skill-modals/skill-modal-add/skill-modal-add.component';
+import { SkillModalEditComponent } from './components/modals/skill-modals/skill-modal-edit/skill-modal-edit.component';
 
 
 
@@ -51,6 +54,9 @@ import { ExperienciaModalDeleteComponent } from './components/modals/experiencia
     ExperienciaModalEditComponent,
     ExperienciaModalAddComponent,
     ExperienciaModalDeleteComponent,
+    SkillModalDeleteComponent,
+    SkillModalAddComponent,
+    SkillModalEditComponent,
     
   ],
   imports: [
