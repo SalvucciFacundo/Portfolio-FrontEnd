@@ -54,24 +54,36 @@
             </div>
           </div>
         </nav>
-        <div class="editar">
-          <a href=""><i class="fa-solid fa-square-pen fa-2x" style="color:red;"></i></a>
+        <div class="editar" *ngIf="usuarioLogeado=='true'">
+          <a href=""
+          data-bs-toggle="modal"
+          data-bs-target="#banner">
+          <i class="fa-solid fa-square-pen fa-2x" style="color:red;"></i>
+        </a>
         </div>
         
       </header>
 
 <div class="card acerca mt-3">
         <div class="row g-0">
-          <div class="editarProfile">
-            <a href=""><i class="fa-solid fa-square-pen fa-2x" style="color:red;"></i></a>
+          <div class="editarProfile" *ngIf="usuarioLogeado=='true'">
+            <a href=""
+            data-bs-toggle="modal"
+            data-bs-target="#imgPerfil">
+            <i class="fa-solid fa-square-pen fa-2x" style="color:red;"></i>
+          </a>
           </div>
           <div class="col-md-4">
             <img src="../../../assets/img/profile2.jpg" class="img-fluid rounded-circle imgPerfil" alt="perfilImagen">
           </div>
           <div class="col-md-8 cardAlineamiento">
             <div class="card-body text-center ">
-              <div class="editarNombre">
-                <a href=""><i class="fa-solid fa-square-pen fa-2x" style="color:red;"></i></a>
+              <div class="editarNombre" *ngIf="usuarioLogeado=='true'">
+                <a href=""
+                data-bs-toggle="modal"
+                data-bs-target="#nombreModal">
+                <i class="fa-solid fa-square-pen fa-2x" style="color:red;"></i>
+              </a>
               </div>
               <h1 class="text-center"><b>Facundo Damian Salvucci</b><br/></h1>
               <h3 class="text-center">Desarrollador Full Stack Jr.</h3>
@@ -85,8 +97,12 @@
                 Nacionalidad: Argentino<br />
                 Cel: 2615730481
               </p>
-              <div class="editarNombre">
-                <a href=""><i class="fa-solid fa-square-pen fa-2x" style="color:red;"></i></a>
+              <div class="editarNombre" *ngIf="usuarioLogeado=='true'">
+                <a href=""
+                data-bs-toggle="modal"
+                data-bs-target="#acercaModal">
+                <i class="fa-solid fa-square-pen fa-2x" style="color:red;"></i>
+              </a>
               </div>
             </div>
           </div>
@@ -94,3 +110,7 @@
  </div>
  <app-login></app-login>
  <app-register></app-register>
+ <app-img-perfil></app-img-perfil>
+ <app-banner></app-banner>
+ <app-nombre></app-nombre>
+ <app-sobre-mi></app-sobre-mi>

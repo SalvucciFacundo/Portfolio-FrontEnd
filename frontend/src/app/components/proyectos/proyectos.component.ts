@@ -19,10 +19,11 @@ export class ProyectosComponent implements OnInit {
     {imagen:'assets/img/imagen1.jpg',nombre:'Mis Canarios',descripcion:'prueba',url:'prueba'},
     {imagen:'assets/img/imagen1.jpg',nombre:'Dubbbz',descripcion:'prueba',url:'prueba'},
   ];
-
+  usuarioLogeado:any;
   constructor() { }
 
   ngOnInit(): void {
+    this.usuarioLogeado=localStorage.getItem('logeado');
   }
 
 }

@@ -30,10 +30,11 @@ export class SkillComponent implements OnInit {
     {nombre:'Adaptación al cambio',valor:'80%'},
     {nombre:'Resolución de problemas',valor:'60%'},
   ];
-   
+  usuarioLogeado:any;
   constructor() { }
 
   ngOnInit(): void {
+    this.usuarioLogeado=localStorage.getItem('logeado');
   }
 
 }

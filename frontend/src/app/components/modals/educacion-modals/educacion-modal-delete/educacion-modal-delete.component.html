@@ -1,0 +1,38 @@
+<div
+class="modal fade"
+id="educacionModalDelete"
+tabindex="-1"
+aria-labelledby="exampleModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content fondoModal">
+    <div class="modal-header">
+      <h1 class="modal-title fs-5" id="exampleModalLabel">
+        Eliminar titulos y cursos
+      </h1>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Cancelar"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <form >
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Seleccione opcion a editar </label>
+            <select class="form-select" aria-label="Default select example">
+                <option selected >Seleccione para eliminar</option>
+                <option value="1" *ngFor="let item of educ">{{item.nombre}}</option>
+              </select>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+    </div>
+  </div>
+</div>
+</div>
+

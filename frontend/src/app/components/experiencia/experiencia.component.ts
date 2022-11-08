@@ -22,10 +22,11 @@ export class ExperienciaComponent implements OnInit {
     {lugar:'Desarrollador Web Freelance',info:'Desarrollo y mantenimiento de paginas web. 2019 - Actualidad',logo:'assets/img/experiencia/freelance.jpg'},
     {lugar:'Soporte Técnico y QA Dubb.com',info:'Testeo de plataforma y manejo de usuarios de la plataforma. 2021 - Actualidad',logo:'assets/img/experiencia/dubbz.png'},
   ];
-
+  usuarioLogeado:any;
   constructor() { }
 
   ngOnInit(): void {
+    this.usuarioLogeado=localStorage.getItem('logeado');
   }
 
 }

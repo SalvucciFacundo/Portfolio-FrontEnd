@@ -1,8 +1,17 @@
 
   <div class="container">
     <h1 class="textoFondo"><b>Educación</b></h1>
-    <div class="editarNombre">
-      <a href=""><i class="fa-solid fa-square-pen fa-2x" style="color:red;"></i></a>
+
+    <div class="editarNombre" *ngIf="usuarioLogeado=='true'">
+      <a href="" data-bs-toggle="modal" data-bs-target="#educacionModalAdd">
+        <i class="fa-solid fa-plus fa-2x" style="color:green; margin-right: 5px;"></i>
+      </a>
+      <a href="" data-bs-toggle="modal" data-bs-target="#educacionModalEdit">
+        <i class="fa-solid fa-square-pen fa-2x" style="color:blue;margin-right: 5px;"></i>
+      </a>
+      <a href="" data-bs-toggle="modal" data-bs-target="#educacionModalDelete">
+        <i class="fa-solid fa-trash fa-2x" style="color:red;"></i>
+      </a>
     </div>
     <div class="row mt-5" >
       <div class="col-10">
@@ -25,3 +34,6 @@
       </div>
     </div>
   </div>
+<app-educacion-modal-edit></app-educacion-modal-edit>
+<app-educacion-modal-add></app-educacion-modal-add>
+<app-educacion-modal-delete></app-educacion-modal-delete>
