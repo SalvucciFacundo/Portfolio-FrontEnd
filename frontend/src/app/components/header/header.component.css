@@ -37,3 +37,17 @@ header{
     margin-top: 3%;
     margin-left: -2%;
 }
+
+.editar{
+    text-align: end;
+    padding-top: 20%;
+    text-decoration: none;
+    margin-right: 10px;
+}
+.editarProfile{
+    text-align: start;
+    margin-left: 10px;
+}
+.editarNombre{
+    text-align: end;
+}

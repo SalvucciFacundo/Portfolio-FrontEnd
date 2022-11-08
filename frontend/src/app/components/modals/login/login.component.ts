@@ -12,4 +12,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  logear(){
+    localStorage.setItem('logeado', 'true');
+    window.location.reload()
+  }
 }

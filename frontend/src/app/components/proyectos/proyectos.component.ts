@@ -15,9 +15,9 @@ export interface Proyectos{
 export class ProyectosComponent implements OnInit {
 
   proyec: Proyectos[]=[
-    {imagen:'prueba',nombre:'prueba',descripcion:'prueba',url:'prueba'},
-    {imagen:'prueba',nombre:'prueba',descripcion:'prueba',url:'prueba'},
-    {imagen:'prueba',nombre:'prueba',descripcion:'prueba',url:'prueba'},
+    {imagen:'assets/img/imagen1.jpg',nombre:'Portafolio',descripcion:'prueba',url:'prueba'},
+    {imagen:'assets/img/imagen1.jpg',nombre:'Mis Canarios',descripcion:'prueba',url:'prueba'},
+    {imagen:'assets/img/imagen1.jpg',nombre:'Dubbbz',descripcion:'prueba',url:'prueba'},
   ];
 
   constructor() { }

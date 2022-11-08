@@ -1,23 +1,25 @@
-<div class="container">
-    <h1 class="textoFondo"><b>Proyectos</b></h1>
-    <div class="container" *ngFor="let item of proyec">
-      <div class="row">
-        <div class="col-4">
-          <div class="card">
-            <img
-              src="assets/img/imagen1.jpg"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Portafolio</h5>
-              <p class="card-text">
-                Aun en contruccion.
-              </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+
+       <div class="container">
+        <h1 class="textoFondo"><b>Proyectos</b></h1>
+        <div class="editarNombre">
+          <a href=""><i class="fa-solid fa-square-pen fa-2x" style="color:red;"></i></a>
+        </div>
+        <div class="row mt-3">
+          <div class="col-auto" *ngFor="let item of proyec">
+            <div class="card mt-3" style="width: 25rem;">
+              <img
+                src="{{item.imagen}}"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">{{item.nombre}}</h5>
+                <p class="card-text">
+                  {{item.descripcion}}
+                </p>
+                <a href="{{item.url}}" class="btn btn-primary">Visitar</a>
+              </div>
             </div>
           </div>
         </div>
-          </div>
-        </div>
-      </div>
+    </div>

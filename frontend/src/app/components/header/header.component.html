@@ -1,5 +1,5 @@
 
-      <header style="background:url(../../../assets/img/imagen1.jpg) ;">
+      <header style="background:url(../../../assets/img/imagen1.jpg);">
         <nav class="navbar navbar-expand-lg navbar-dark" >
           <div class="container-fluid">
             <a class="navbar-brand" href="#">
@@ -42,26 +42,37 @@
                   <a href="#"
                   data-bs-toggle="modal"
                   data-bs-target="#loginModal">
-                    <i class="fa-solid fa-user-lock text-white"></i>
+                    <i class="fa-solid fa-user-lock text-white"*ngIf="usuarioLogeado!='true'"></i>
                   </a>
                 </li>
-                <li class="nav-item fa-2x iconos">
+                <li class="nav-item fa-2x iconos" *ngIf="usuarioLogeado=='true'">
                   <a href="">
-                    <i class="fa-solid fa-right-from-bracket text-white"></i>
+                    <i class="fa-solid fa-right-from-bracket text-white" (click)="logOut()"></i>
                   </a>
                 </li>
               </ul>
             </div>
           </div>
         </nav>
+        <div class="editar">
+          <a href=""><i class="fa-solid fa-square-pen fa-2x" style="color:red;"></i></a>
+        </div>
+        
       </header>
+
 <div class="card acerca mt-3">
         <div class="row g-0">
+          <div class="editarProfile">
+            <a href=""><i class="fa-solid fa-square-pen fa-2x" style="color:red;"></i></a>
+          </div>
           <div class="col-md-4">
             <img src="../../../assets/img/profile2.jpg" class="img-fluid rounded-circle imgPerfil" alt="perfilImagen">
           </div>
           <div class="col-md-8 cardAlineamiento">
             <div class="card-body text-center ">
+              <div class="editarNombre">
+                <a href=""><i class="fa-solid fa-square-pen fa-2x" style="color:red;"></i></a>
+              </div>
               <h1 class="text-center"><b>Facundo Damian Salvucci</b><br/></h1>
               <h3 class="text-center">Desarrollador Full Stack Jr.</h3>
               <h2 class="textoFondo"><b>Acerca de mi</b></h2>
@@ -74,6 +85,9 @@
                 Nacionalidad: Argentino<br />
                 Cel: 2615730481
               </p>
+              <div class="editarNombre">
+                <a href=""><i class="fa-solid fa-square-pen fa-2x" style="color:red;"></i></a>
+              </div>
             </div>
           </div>
         </div>
