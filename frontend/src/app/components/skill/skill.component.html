@@ -1,7 +1,15 @@
 <div class="container">
   <h3 class="textoFondo mb-3"><b>Hard Skill</b></h3>
   <div class="editarNombre" *ngIf="usuarioLogeado=='true'">
-    <a href=""><i class="fa-solid fa-square-pen fa-2x" style="color:red;"></i></a>
+    <a href="" data-bs-toggle="modal" data-bs-target="#skillModalAdd">
+      <i class="fa-solid fa-plus fa-2x" style="color:green; margin-right: 5px;"></i>
+    </a>
+    <a href="" data-bs-toggle="modal" data-bs-target="#skillModalEdit">
+      <i class="fa-solid fa-square-pen fa-2x" style="color:blue;margin-right: 5px;"></i>
+    </a>
+    <a href="" data-bs-toggle="modal" data-bs-target="#skillModalDelete">
+      <i class="fa-solid fa-trash fa-2x" style="color:red;"></i>
+    </a>
   </div>
   <div class="container">
     <div class="row">
@@ -44,3 +52,6 @@
   </div>
 </div>
 
+<app-skill-modal-add></app-skill-modal-add>
+<app-skill-modal-edit></app-skill-modal-edit>
+<app-skill-modal-delete></app-skill-modal-delete>

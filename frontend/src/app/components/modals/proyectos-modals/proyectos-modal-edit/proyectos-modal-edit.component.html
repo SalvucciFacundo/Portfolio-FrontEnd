@@ -1,6 +1,6 @@
 <div
 class="modal fade"
-id="skillModalEdit"
+id="proyectosModalEdit"
 tabindex="-1"
 aria-labelledby="exampleModalLabel"
 aria-hidden="true"
@@ -9,7 +9,7 @@ aria-hidden="true"
   <div class="modal-content fondoModal">
     <div class="modal-header">
       <h1 class="modal-title fs-5" id="exampleModalLabel">
-        Editar skills
+        Editar proyectos
       </h1>
       <button
         type="button"
@@ -21,28 +21,29 @@ aria-hidden="true"
     <div class="modal-body">
       <form >
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Seleccione opcion a editar(Hard Skill) </label>
+            <label for="exampleInputEmail1" class="form-label">Seleccione opcion a editar </label>
             <select class="form-select" aria-label="Default select example">
                 <option selected >Seleccione para editar</option>
-                <option value="1" *ngFor="let item of hardSkill ">{{item.nombre}}</option>
+                <option value="1" *ngFor="let item of proyec">{{item.nombre}}</option>
               </select>
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Seleccione opcion a editar(Soft Skill) </label>
-            <select class="form-select" aria-label="Default select example">
-                <option selected >Seleccione para editar</option>
-                <option value="1" *ngFor="let item of softSkill ">{{item.nombre}}</option>
-              </select>
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"> Ingrese nombre de la skill </label>
+          <label for="exampleInputEmail1" class="form-label"> Ingrese nombre del proyecto </label>
           <input type="text" class="form-control" id="titulo" placeholder="Ejemplo"/>
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"> Ingrese valor </label>
-            <input type="text" class="form-control" id="titulo" placeholder="90"/>
+            <label for="exampleInputEmail1" class="form-label"> Ingrese descripcion</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
-
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"> Ingrese URL del proyecto</label>
+            <input type="text" class="form-control" id="titulo" placeholder="ejemplo"/>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Seleccione logo</label>
+            <input type="file" class="form-control" id="exampleInputEmail1"
+          />
+          </div>
       </form>
     </div>
     <div class="modal-footer">

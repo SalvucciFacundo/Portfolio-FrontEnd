@@ -1,6 +1,6 @@
 <div
 class="modal fade"
-id="skillModalAdd"
+id="proyectosModalDelete"
 tabindex="-1"
 aria-labelledby="exampleModalLabel"
 aria-hidden="true"
@@ -9,7 +9,7 @@ aria-hidden="true"
   <div class="modal-content fondoModal">
     <div class="modal-header">
       <h1 class="modal-title fs-5" id="exampleModalLabel">
-        Agregar skills
+        Eliminar proyectos
       </h1>
       <button
         type="button"
@@ -21,14 +21,12 @@ aria-hidden="true"
     <div class="modal-body">
       <form >
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"> Ingrese nombre de la skill </label>
-          <input type="text" class="form-control" id="titulo" placeholder="Ejemplo"/>
+            <label for="exampleInputEmail1" class="form-label">Seleccione opcion a eliminar </label>
+            <select class="form-select" aria-label="Default select example">
+                <option selected >Seleccione para editar</option>
+                <option value="1" *ngFor="let item of proyec">{{item.nombre}}</option>
+              </select>
         </div>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"> Ingrese valor </label>
-            <input type="text" class="form-control" id="titulo" placeholder="90"/>
-          </div>
-
       </form>
     </div>
     <div class="modal-footer">
