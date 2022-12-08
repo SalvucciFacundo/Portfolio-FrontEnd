@@ -51,3 +51,7 @@ header{
 .editarNombre{
     text-align: end;
 }
+.texto{
+    margin-top: 5px;
+    font-size: larger;
+}

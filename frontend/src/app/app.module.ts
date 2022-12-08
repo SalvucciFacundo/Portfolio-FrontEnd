@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
-
+import { HttpClientModule } from '@angular/common/http'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {NgToastModule} from 'ng-angular-popup';
+//componentes
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -32,6 +35,7 @@ import { SkillModalEditComponent } from './components/modals/skill-modals/skill-
 import { ProyectosModalEditComponent } from './components/modals/proyectos-modals/proyectos-modal-edit/proyectos-modal-edit.component';
 import { ProyectosModalAddComponent } from './components/modals/proyectos-modals/proyectos-modal-add/proyectos-modal-add.component';
 import { ProyectosModalDeleteComponent } from './components/modals/proyectos-modals/proyectos-modal-delete/proyectos-modal-delete.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 
@@ -63,6 +67,7 @@ import { ProyectosModalDeleteComponent } from './components/modals/proyectos-mod
     ProyectosModalEditComponent,
     ProyectosModalAddComponent,
     ProyectosModalDeleteComponent,
+    HomeComponent,
     
   ],
   imports: [
@@ -70,7 +75,11 @@ import { ProyectosModalDeleteComponent } from './components/modals/proyectos-mod
     AppRoutingModule,
     FontAwesomeModule,
     CarouselModule,
-  ],
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgToastModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

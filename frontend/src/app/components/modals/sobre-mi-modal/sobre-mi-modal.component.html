@@ -8,7 +8,7 @@ aria-hidden="true"
 <div class="modal-dialog modal-dialog-centered">
   <div class="modal-content fondoModal">
     <div class="modal-header">
-      <h1 class="modal-title fs-5" id="exampleModalLabel">
+      <h1 class="modal-title fs-5">
         Editar Acerca de mi
       </h1>
       <button
@@ -19,16 +19,16 @@ aria-hidden="true"
       ></button>
     </div>
     <div class="modal-body">
-      <form>
+      <form [formGroup]="editarSobre">
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Ingrese Datos </label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <label class="form-label">Ingrese Datos </label>
+          <textarea class="form-control" rows="3"  formControlName="sobreMi"></textarea>
         </div>
         
       </form>
     </div>
     <div class="modal-footer">
-      <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+      <button type="submit" (click)="editar()" [disabled]="editarSobre.invalid" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
     </div>
   </div>
 </div>

@@ -8,7 +8,7 @@ aria-hidden="true"
 <div class="modal-dialog modal-dialog-centered">
   <div class="modal-content fondoModal">
     <div class="modal-header">
-      <h1 class="modal-title fs-5" id="exampleModalLabel">
+      <h1 class="modal-title fs-5">
        Editar Imagen de perfil
       </h1>
       <button
@@ -19,21 +19,21 @@ aria-hidden="true"
       ></button>
     </div>
     <div class="modal-body">
-      <form>
+      <form [formGroup]="editarPerfil">
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label"
             >Seleccione una imagen</label
           >
           <input
-            type="file"
+            type="text"
             class="form-control"
-            id="exampleInputEmail1"
+            formControlName="imageUrl"
           />
         </div>
       </form>
     </div>
     <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+        <button type="submit" (click)="editar()" [disabled]="editarPerfil.invalid" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
       </div>
   </div>
 </div>

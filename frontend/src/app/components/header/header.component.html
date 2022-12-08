@@ -1,5 +1,5 @@
 
-      <header style="background:url(../../../assets/img/imagen1.jpg);">
+      <header style="background:url({{persona.bannerUrl}});">
         <nav class="navbar navbar-expand-lg navbar-dark" >
           <div class="container-fluid">
             <a class="navbar-brand" href="#">
@@ -74,7 +74,7 @@
           </a>
           </div>
           <div class="col-md-4">
-            <img src="../../../assets/img/profile2.jpg" class="img-fluid rounded-circle imgPerfil" alt="perfilImagen">
+            <img src="{{persona.profileUrl}}" class="img-fluid rounded-circle imgPerfil" alt="perfilImagen">
           </div>
           <div class="col-md-8 cardAlineamiento">
             <div class="card-body text-center ">
@@ -85,18 +85,16 @@
                 <i class="fa-solid fa-square-pen fa-2x" style="color:blue;"></i>
               </a>
               </div>
-              <h1 class="text-center"><b>Facundo Damian Salvucci</b><br/></h1>
-              <h3 class="text-center">Desarrollador Full Stack Jr.</h3>
+              <h1 class="text-center"><b>{{persona.name}} {{persona.lastName}}</b><br/></h1>
+              <h3 class="text-center">{{persona.title}}</h3>
               <h2 class="textoFondo"><b>Acerca de mi</b></h2>
-              <p>
-                Técnico superior en programación UTN Facultad Regional Mendoza año 2018.<br />
-                Desarrollador web freelance Angular y Node.js<br />
-                Soporte técnico y QA.<br />
-                Correo: fds1288@gmail.com<br />
-                Fecha de nacimiento: 12/12/1988<br />
-                Nacionalidad: Argentino<br />
-                Cel: 2615730481
-              </p>
+              <p class="texto"><b>
+               {{persona.aboutMe}}<br />
+                Correo: {{persona.email}}<br />
+                Fecha de nacimiento: {{persona.birth}}<br />
+                Nacionalidad: {{persona.nationality}}<br />
+                Cel: {{persona.phone}}
+              </b></p>
               <div class="editarNombre" *ngIf="usuarioLogeado=='true'">
                 <a href=""
                 data-bs-toggle="modal"

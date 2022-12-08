@@ -19,21 +19,21 @@ aria-hidden="true"
       ></button>
     </div>
     <div class="modal-body">
-      <form>
+      <form [formGroup]="editarBanner">
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label"
-            >Seleccione una imagen</label
+            >Ingrese url de la imaegn</label
           >
           <input
-            type="file"
+            type="text"
             class="form-control"
-            id="exampleInputEmail1"
+            formControlName="imageUrl"
           />
         </div>
       </form>
     </div>
     <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+        <button type="submit" (click)="editar()" [disabled]="editarBanner.invalid" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
       </div>
   </div>
 </div>
