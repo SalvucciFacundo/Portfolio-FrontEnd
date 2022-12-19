@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { NgToastService } from 'ng-angular-popup';
+import { EducacionService } from 'src/app/services/educacion.service';
 export interface Cursos {
   nombre: string;
   logo: string;
@@ -17,9 +20,35 @@ export class EducacionModalDeleteComponent implements OnInit {
     {nombre:'Stack MEAN Fazt Code 2021',logo:'assets/img/educacion/mean2.png'},
     {nombre:'Argentina Programa 2022',logo:'assets/img/educacion/ApLogo.png'}
 ];
-  constructor() { }
+
+educacion :any;
+eliminarEducacion:FormGroup;
+edu:any;
+  constructor(public educSvc : EducacionService, private fb: FormBuilder, private toast: NgToastService) { 
+    this.eliminarEducacion = this.fb.group({
+      seleccion: ['',Validators.required],
+    })
+  }
 
   ngOnInit(): void {
+    this.educSvc.getAllEducation().subscribe(data =>{
+      this.educacion=data;
+    })
+  }
+
+  eliminar(){
+    this.educSvc.deleteEducation(this.eliminarEducacion.value.seleccion).subscribe(data =>{
+      this.edu=data;
+    })
+    if(this.edu == "El registro ha sido eliminado"){
+      setTimeout(
+        function(){ 
+        window.location.reload(); 
+        }, 3000);
+      this.toast.success({detail:'Exito',summary:'Eliminado correctamente',sticky:true,position:'tr'})
+    }else{
+      this.toast.error({detail:'Error',summary:'Error al eliminar',sticky:true,position:'tr'});
+    }
   }
 
 }

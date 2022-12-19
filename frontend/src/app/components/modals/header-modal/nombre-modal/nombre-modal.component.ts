@@ -26,7 +26,7 @@ export class NombreModalComponent implements OnInit {
   ngOnInit(): void {
     this.personSvc.getPerson(1).subscribe(data =>{
       this.persona=data;
-      console.log(data)
+      //console.log(data)
     })
   }
 

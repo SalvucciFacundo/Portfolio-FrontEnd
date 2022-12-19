@@ -19,19 +19,34 @@ aria-hidden="true"
       ></button>
     </div>
     <div class="modal-body">
-      <form >
+      <form [formGroup]="crearEducacion">
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"> Ingrese Titulo/Curso y Nombre del Instituto </label>
-          <input type="text" class="form-control"placeholder="Tecnico/ingeniero"/>
+          <label  class="form-label"> Ingrese Titulo/Curso </label>
+          <input type="text" class="form-control"placeholder="Tecnico/ingeniero" formControlName="titulo"/>
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">  Nombre del Instituto </label>
+          <input type="text" class="form-control"placeholder="Facultad..." formControlName="instituto"/>
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Seleccione logo</label>
-            <input type="file" class="form-control"/>
+            <input type="text" class="form-control" formControlName="logo" placeholder="Ingrese url"
+          />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Ingrese fecha de inicio</label>
+            <input type="text" class="form-control" formControlName="inicio" placeholder="Ingrese fecha(año)"
+          />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Ingrese fecha de finalizacion</label>
+            <input type="text" class="form-control" formControlName="fin" placeholder="Ingrese fecha(año)"
+          />
           </div>
       </form>
     </div>
     <div class="modal-footer">
-      <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+      <button type="submit"  (click)="crear()" [disabled]="crearEducacion.invalid" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
     </div>
   </div>
 </div>

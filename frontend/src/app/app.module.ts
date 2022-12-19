@@ -16,10 +16,10 @@ import { SkillComponent } from './components/skill/skill.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { LoginComponent } from './components/modals/login/login.component';
 import { RegisterComponent } from './components/modals/register/register.component';
-import { BannerModalComponent } from './components/modals/banner-modal/banner-modal.component';
-import { ImgPerfilModalComponent } from './components/modals/img-perfil-modal/img-perfil-modal.component';
-import { NombreModalComponent } from './components/modals/nombre-modal/nombre-modal.component';
-import { SobreMiModalComponent } from './components/modals/sobre-mi-modal/sobre-mi-modal.component';
+import { BannerModalComponent } from './components/modals/header-modal/banner-modal/banner-modal.component';
+import { ImgPerfilModalComponent } from './components/modals/header-modal/img-perfil-modal/img-perfil-modal.component';
+import { NombreModalComponent } from './components/modals/header-modal/nombre-modal/nombre-modal.component';
+import { SobreMiModalComponent } from './components/modals/header-modal/sobre-mi-modal/sobre-mi-modal.component';
 
 //educacion modales
 import { EducacionModalEditComponent } from './components/modals/educacion-modals/educacion-modal-edit/educacion-modal-edit.component'; 

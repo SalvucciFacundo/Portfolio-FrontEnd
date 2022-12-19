@@ -1,30 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgToastService } from 'ng-angular-popup';
 import { Person } from 'src/app/models/person.model';
 import { PersonService } from 'src/app/services/person.service';
 
 @Component({
-  selector: 'app-sobre-mi-modal',
-  templateUrl: './sobre-mi-modal.component.html',
-  styleUrls: ['./sobre-mi-modal.component.css']
+  selector: 'app-img-perfil-modal',
+  templateUrl: './img-perfil-modal.component.html',
+  styleUrls: ['./img-perfil-modal.component.css']
 })
-export class SobreMiModalComponent implements OnInit {
-
+export class ImgPerfilModalComponent implements OnInit {
   persona:Person= new Person("","","","","",0,"","","","",);
-  editarSobre:FormGroup;
+  editarPerfil:FormGroup;
   per:any;
-  
+
   constructor(private fb: FormBuilder, private personSvc: PersonService, private toast: NgToastService) { 
-    this.editarSobre = this.fb.group({
-      sobreMi: ['',Validators.required],
+    this.editarPerfil = this.fb.group({
+      imageUrl: ['',Validators.required],
     });
   }
 
   ngOnInit(): void {
     this.personSvc.getPerson(1).subscribe(data =>{
       this.persona=data;
-      console.log(data)
+      //console.log(data)
     })
   }
 
@@ -38,9 +37,9 @@ export class SobreMiModalComponent implements OnInit {
      email:this.persona.email,
      phone:this.persona.phone,
      nationality:this.persona.nationality,
-     aboutMe:this.editarSobre.value.sobreMi,
+     aboutMe:this.persona.aboutMe,
      bannerUrl:this.persona.bannerUrl,
-     profileUrl:this.persona.profileUrl
+     profileUrl:this.editarPerfil.value.imageUrl
     }
      this.personSvc.editPerson(1,persona).subscribe(data=>{
       this.per=data;

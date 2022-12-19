@@ -1,7 +1,6 @@
 
   <div class="container mt-3">
     <h1 class="textoFondo"><b>Educación</b></h1>
-
     <div class="editarNombre" *ngIf="usuarioLogeado=='true'">
       <a href="" data-bs-toggle="modal" data-bs-target="#educacionModalAdd">
         <i class="fa-solid fa-plus fa-2x" style="color:green; margin-right: 5px;"></i>
@@ -13,12 +12,12 @@
         <i class="fa-solid fa-trash fa-2x" style="color:red;"></i>
       </a>
     </div>
-    <div class="row mt-5" >
+    <div class="row mt-3" >
       <div class="col-10">
         <div class="card fondoCard text-center">
-          <ul *ngFor="let item of educ" style="list-style: none;">
+          <ul *ngFor="let item of educacion" style="list-style: none;">
             <li>
-              <b>{{item.nombre}}</b>
+              <b>{{item.title}}{{item.institute}}{{item.start}}{{item.end}}</b>
             </li>
           </ul>
         </div>
@@ -26,8 +25,8 @@
       <div class="col-2 alinear">
         <div class="card fondoCard">
           <carousel>
-            <slide *ngFor="let item of educ">
-              <img src={{item.logo}} alt="first slide" style="display: block; width: 100%;">
+            <slide *ngFor="let item of educacion">
+              <img src={{item.logoUrl}} alt="first slide" style="display: block; width: 100%;">
             </slide>
           </carousel>
         </div>

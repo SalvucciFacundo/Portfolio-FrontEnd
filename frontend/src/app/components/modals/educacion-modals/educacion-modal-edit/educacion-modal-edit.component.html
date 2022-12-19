@@ -8,7 +8,7 @@ aria-hidden="true"
 <div class="modal-dialog modal-dialog-centered">
   <div class="modal-content fondoModal">
     <div class="modal-header">
-      <h1 class="modal-title fs-5" id="exampleModalLabel">
+      <h1 class="modal-title fs-5">
         Editar titulos y cursos
       </h1>
       <button
@@ -19,27 +19,38 @@ aria-hidden="true"
       ></button>
     </div>
     <div class="modal-body">
-      <form >
+      <form [formGroup]="editarEducacion">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Seleccione opcion a editar </label>
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" formControlName="id">
                 <option selected >Seleccione para editar</option>
-                <option value="1" *ngFor="let item of educ">{{item.nombre}}</option>
+                <option value="{{item.id}}" *ngFor="let item of educacion">{{item.title}}</option>
               </select>
         </div>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"> Ingrese Titulo/Curso y Nombre del Instituto </label>
-          <input type="text" class="form-control" placeholder="Tecnico/ingeniero"/>
+          <label for="exampleInputEmail1" class="form-label"> Ingrese Titulo/Curso </label>
+          <input type="text" class="form-control" formControlName="titulo"/>
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Seleccione logo</label>
-            <input type="file" class="form-control"
-          />
-          </div>
+          <label for="exampleInputEmail1" class="form-label">Nombre del Instituto </label>
+          <input type="text" class="form-control" formControlName="instituto"/>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"> Ingrese Año de inicio</label>
+          <input type="text" class="form-control" formArrayName="inicio"/>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"> Ingrese año de finalizacion </label>
+          <input type="text" class="form-control" formControlName="fin"/>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"> Ingrese URL de la imagen</label>
+          <input type="text" class="form-control" formControlName="logo"/>
+        </div>
       </form>
     </div>
     <div class="modal-footer">
-      <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+      <button type="submit" (click)="editar()" [disabled]="editarEducacion.invalid" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
     </div>
   </div>
 </div>
