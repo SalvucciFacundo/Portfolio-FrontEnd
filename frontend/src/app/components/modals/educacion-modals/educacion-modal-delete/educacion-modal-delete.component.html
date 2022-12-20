@@ -21,7 +21,7 @@ aria-hidden="true"
     <div class="modal-body">
       <form [formGroup]="eliminarEducacion">
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Seleccione opcion a editar </label>
+            <label for="exampleInputEmail1" class="form-label">Seleccione opcion a eliminar </label>
             <select class="form-select" aria-label="Default select example" formControlName="seleccion">
                 <option selected >Seleccione para eliminar</option>
                 <option value="{{item.id}}" *ngFor="let item of educacion">{{item.title}}</option>

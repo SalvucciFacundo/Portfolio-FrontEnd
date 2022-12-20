@@ -43,11 +43,7 @@ ngOnInit(): void {
   this.educSvc.getAllEducation().subscribe(data =>{
     this.educacion=data;
   })
-  // this.persoSvc.getPerson(1).subscribe(data =>{
-  //   this.persona=data;
-  
-  // })
-
+ 
 }
 
  editar(){

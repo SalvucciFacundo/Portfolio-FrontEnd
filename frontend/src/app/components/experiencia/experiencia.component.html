@@ -11,17 +11,17 @@
         <i class="fa-solid fa-trash fa-2x" style="color:red;"></i>
       </a>
     </div>
-    <div class="row mt-5 sombreado" *ngFor="let items of expe">
+    <div class="row mt-5 sombreado" *ngFor="let items of experiencia">
       <div class="col-4 ancho">
         <div class="card fondoCard">
-          <img src="{{items.logo}}" alt="trbajo1" />
+          <img src="{{items.imgUrl}}" alt="trbajo1" />
         </div>
       </div>
       <div class="col-8">
         <div class="card fondoCard text-center">
-          <h4><b>{{items.lugar}}</b></h4>
+          <h4><b>{{items.companyName}}</b></h4>
           <p>
-            {{items.info}}
+            {{items.description}}
           </p>
         </div>
       </div>

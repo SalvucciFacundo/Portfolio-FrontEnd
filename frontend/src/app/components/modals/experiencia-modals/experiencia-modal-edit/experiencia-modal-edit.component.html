@@ -19,31 +19,30 @@ aria-hidden="true"
       ></button>
     </div>
     <div class="modal-body">
-      <form >
+      <form [formGroup]="editarExperiencia">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Seleccione opcion a editar </label>
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" formControlName="id">
                 <option selected >Seleccione para editar</option>
-                <option value="1" *ngFor="let item of expe">{{item.lugar}}</option>
+                <option value="{{item.id}}" *ngFor="let item of experiencia">{{item.companyName}}</option>
               </select>
         </div>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label"> Ingrese Nombre de la empresa </label>
-          <input type="text" class="form-control" placeholder="NOmbre ejemplo"/>
+          <input type="text" class="form-control" formControlName="nombre"/>
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label"> Ingrese descripcion</label>
-            <textarea class="form-control" rows="3"></textarea>
+            <textarea class="form-control" rows="3" formControlName="descripcion"></textarea>
           </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Seleccione imagen</label>
-            <input type="file" class="form-control"
-          />
+            <input type="text" class="form-control" formControlName="logo"/>
           </div>
       </form>
     </div>
     <div class="modal-footer">
-      <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+      <button type="submit" (click)="editar()" [disabled]="editarExperiencia.invalid" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
     </div>
   </div>
 </div>

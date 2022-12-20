@@ -19,24 +19,24 @@ aria-hidden="true"
       ></button>
     </div>
     <div class="modal-body">
-      <form >
+      <form [formGroup]="crearExperiencia" >
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Ingrese nombre </label>
-          <input type="text" class="form-control" placeholder="Empresa ejemplo"/>
+          <input type="text" class="form-control" formControlName="nombre"/>
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Ingrese descripcion del empleo </label>
-            <textarea class="form-control" rows="3"></textarea>
+            <textarea class="form-control" rows="3" formControlName="descripcion"></textarea>
           </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Seleccione imagen</label>
-            <input type="file" class="form-control"
+            <label for="exampleInputEmail1" class="form-label">Ingrese url</label>
+            <input type="text" class="form-control" formControlName="logo"/>
           />
           </div>
       </form>
     </div>
     <div class="modal-footer">
-      <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+      <button type="submit" (click)="crear()" [disabled]="crearExperiencia.invalid" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
     </div>
   </div>
 </div>

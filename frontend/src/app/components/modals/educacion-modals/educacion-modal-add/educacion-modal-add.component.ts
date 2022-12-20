@@ -12,12 +12,12 @@ import { PersonService } from 'src/app/services/person.service';
 })
 export class EducacionModalAddComponent implements OnInit {
 
-  educacion : Educacion = new Educacion ("","","","","",0);
+  educacion : Educacion = new Educacion ("","","","","");
   crearEducacion:FormGroup;
   edu:any;
-  per:any
 
-  constructor(private fb: FormBuilder,private educSvc:EducacionService,private toast: NgToastService,private personSvc: PersonService) { 
+
+  constructor(private fb: FormBuilder,private educSvc:EducacionService,private toast: NgToastService) { 
     this.crearEducacion = this.fb.group({
       titulo: ['',Validators.required],
       instituto:['',Validators.required],
@@ -28,10 +28,6 @@ export class EducacionModalAddComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.personSvc.getPerson(1).subscribe(data =>{
-      this.per=data;
-      console.log(data)
-    })
   }
 
   crear(){
@@ -41,13 +37,23 @@ export class EducacionModalAddComponent implements OnInit {
       logoUrl:this.crearEducacion.value.logo,
       start:this.crearEducacion.value.inicio,
       end:this.crearEducacion.value.fin,
-      idPerson:this.per.id
+      
     }
     
     this.educSvc.createEducation(educacion).subscribe(data =>{
-      console.log(data);
-      console.log('Probando educacion '+ educacion)
+      this.edu=data;
+      //console.log(data);
+     // console.log('Probando educacion '+ educacion)
     });
+    if(this.edu == "Registro creado correctamente"){
+      setTimeout(
+        function(){ 
+        window.location.reload(); 
+        }, 3000);
+      this.toast.success({detail:'Exito',summary:'Creado correctamente',sticky:true,position:'tr'})
+    }else{
+      this.toast.error({detail:'Error',summary:'Error al crear',sticky:true,position:'tr'});
+    }
   }
 
 }
