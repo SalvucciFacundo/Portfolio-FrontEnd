@@ -10,7 +10,7 @@ import { PersonService } from 'src/app/services/person.service';
   styleUrls: ['./banner-modal.component.css']
 })
 export class BannerModalComponent implements OnInit {
-  persona:Person= new Person("","","","","",0,"","","","",);
+  persona:any;
   editarBanner:FormGroup;
   per:any;
 
@@ -21,9 +21,8 @@ export class BannerModalComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.personSvc.getPerson(1).subscribe(data =>{
+    this.personSvc.getAllPerson().subscribe(data =>{
       this.persona=data;
-      //console.log(data)
     })
   }
 

@@ -11,7 +11,7 @@ import { PersonService } from 'src/app/services/person.service';
 })
 export class NombreModalComponent implements OnInit {
 
-  persona:Person= new Person("","","","","",0,"","","","",);
+  persona:any;
   editarNombre:FormGroup;
   //per:any;
 
@@ -24,7 +24,7 @@ export class NombreModalComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.personSvc.getPerson(1).subscribe(data =>{
+    this.personSvc.getAllPerson().subscribe(data =>{
       this.persona=data;
       //console.log(data)
     })

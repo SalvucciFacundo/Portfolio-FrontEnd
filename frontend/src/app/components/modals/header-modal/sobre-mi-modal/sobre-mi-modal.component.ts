@@ -11,7 +11,7 @@ import { PersonService } from 'src/app/services/person.service';
 })
 export class SobreMiModalComponent implements OnInit {
 
-  persona:Person= new Person("","","","","",0,"","","","",);
+  persona:any;
   editarSobre:FormGroup;
   per:any;
   
@@ -26,9 +26,9 @@ export class SobreMiModalComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.personSvc.getPerson(1).subscribe(data =>{
+    this.personSvc.getAllPerson().subscribe(data =>{
       this.persona=data;
-      //console.log(data)
+      
     })
   }
 

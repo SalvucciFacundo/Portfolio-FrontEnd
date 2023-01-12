@@ -10,7 +10,7 @@ import { PersonService } from 'src/app/services/person.service';
   styleUrls: ['./img-perfil-modal.component.css']
 })
 export class ImgPerfilModalComponent implements OnInit {
-  persona:Person= new Person("","","","","",0,"","","","",);
+  persona:any;
   editarPerfil:FormGroup;
   per:any;
 
@@ -21,7 +21,7 @@ export class ImgPerfilModalComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.personSvc.getPerson(1).subscribe(data =>{
+    this.personSvc.getAllPerson().subscribe(data =>{
       this.persona=data;
       //console.log(data)
     })

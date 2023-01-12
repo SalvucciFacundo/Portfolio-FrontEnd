@@ -13,6 +13,10 @@ export class PersonService {
 
   constructor(private http:HttpClient) { }
 
+  public getAllPerson():Observable<Person[]>{
+    return this.http.get<Person[]>(this.URL+'/all');
+  }
+
   public getPerson(id:number):Observable<Person>{
    return this.http.get<Person>(this.URL+'/'+id);
   }

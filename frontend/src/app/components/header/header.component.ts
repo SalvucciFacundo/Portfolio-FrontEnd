@@ -11,12 +11,12 @@ import { PersonService } from 'src/app/services/person.service';
 export class HeaderComponent implements OnInit {
  
   usuarioLogeado:any;
-  persona:Person= new Person("","","","","",0,"","","","",);
+  persona:any;
 
   constructor(public personSvc:PersonService, private auth: AuthService) { }
 
   ngOnInit(): void {
-  this.personSvc.getPerson(1).subscribe(data=>{
+  this.personSvc.getAllPerson().subscribe(data=>{
     this.persona=data;
   });
   this.usuarioLogeado = localStorage.getItem('logeado');
