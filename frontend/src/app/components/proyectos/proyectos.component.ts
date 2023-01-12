@@ -1,11 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-export interface Proyectos{
-  imagen:string;
-  nombre:string;
-  descripcion:string;
-  url:string;
-}
+import { ProyectoService } from 'src/app/services/proyecto.service';
 
 @Component({
   selector: 'app-proyectos',
@@ -14,16 +8,17 @@ export interface Proyectos{
 })
 export class ProyectosComponent implements OnInit {
 
-  proyec: Proyectos[]=[
-    {imagen:'assets/img/imagen1.jpg',nombre:'Portafolio',descripcion:'prueba',url:'prueba'},
-    {imagen:'assets/img/imagen1.jpg',nombre:'Mis Canarios',descripcion:'prueba',url:'prueba'},
-    {imagen:'assets/img/imagen1.jpg',nombre:'Dubbbz',descripcion:'prueba',url:'prueba'},
-  ];
+  
   usuarioLogeado:any;
-  constructor() { }
+  proyectos:any;
+
+  constructor(private proSvc : ProyectoService) { }
 
   ngOnInit(): void {
     this.usuarioLogeado=localStorage.getItem('logeado');
+    this.proSvc.getAllProject().subscribe(data=>{
+      this.proyectos = data;
+    })
   }
 
 }

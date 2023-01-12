@@ -19,25 +19,18 @@ aria-hidden="true"
       ></button>
     </div>
     <div class="modal-body">
-      <form >
+      <form [formGroup]="elimnarSkill">
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Seleccione opcion a eliminar(Hard Skill) </label>
-            <select class="form-select" aria-label="Default select example">
+            <label for="exampleInputEmail1" class="form-label">Seleccione opcion a eliminar </label>
+            <select class="form-select" aria-label="Default select example" formControlName="seleccion">
                 <option selected >Seleccione para eliminar</option>
-                <option value="1" *ngFor="let item of hardSkill ">{{item.nombre}}</option>
-              </select>
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Seleccione opcion a eliminar(Soft Skill) </label>
-            <select class="form-select" aria-label="Default select example">
-                <option selected >Seleccione para eliminar</option>
-                <option value="1" *ngFor="let item of softSkill ">{{item.nombre}}</option>
+                <option value="{{item.id}}" *ngFor="let item of skill ">{{item.name}}</option>
               </select>
         </div>
       </form>
     </div>
     <div class="modal-footer">
-      <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+      <button type="submit"(click)="eliminar()" [disabled]="elimnarSkill.invalid" class="btn btn-danger" data-bs-dismiss="modal">Aceptar</button>
     </div>
   </div>
 </div>

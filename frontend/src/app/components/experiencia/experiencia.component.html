@@ -14,7 +14,7 @@
     <div class="row mt-5 sombreado" *ngFor="let items of experiencia">
       <div class="col-4 ancho">
         <div class="card fondoCard">
-          <img src="{{items.imgUrl}}" alt="trbajo1" />
+          <img src="{{items.imgUrl}}" alt="trbajologo" />
         </div>
       </div>
       <div class="col-8">
@@ -23,6 +23,7 @@
           <p>
             {{items.description}}
           </p>
+          <h4>{{items.start}}-{{items.end}}</h4>
         </div>
       </div>
     </div>

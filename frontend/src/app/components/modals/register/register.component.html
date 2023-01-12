@@ -19,15 +19,26 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form>
+            <form [formGroup]="crearUsuario">
               <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label"
-                  >Usuario</label
+                <label  class="form-label"
+                  >Nombre</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Nombre"
+                  formControlName="nombre"
+                />
+              <div class="mb-3">
+                <label class="form-label"
+                  >Email</label
                 >
                 <input
                   type="email"
                   class="form-control"
                   placeholder="ejemplo@ejemplo.com"
+                  formControlName="email"
                 />
               </div>
               <div class="mb-3">
@@ -37,21 +48,14 @@
                 <input
                   type="password"
                   class="form-control"
+                  formControlName="password"
                />
               </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword2" class="form-label"
-                  >Repetir Contraseña</label
-                >
-                <input
-                  type="password"
-                  class="form-control"
-                />
               </div>
             </form>
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">Aceptar</button>
+            <button type="submit" (click)="crear()" [disabled]="crearUsuario.invalid" class="btn btn-primary">Aceptar</button>
             <button
             type="button"
             class="btn btn-danger"

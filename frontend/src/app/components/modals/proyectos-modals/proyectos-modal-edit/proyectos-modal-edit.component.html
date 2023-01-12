@@ -19,35 +19,34 @@ aria-hidden="true"
       ></button>
     </div>
     <div class="modal-body">
-      <form >
+      <form [formGroup]="editarProyecto" >
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Seleccione opcion a editar </label>
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" formControlName="id">
                 <option selected >Seleccione para editar</option>
-                <option value="1" *ngFor="let item of proyec">{{item.nombre}}</option>
+                <option value="{{item.id}}" *ngFor="let item of proyectos">{{item.title}}</option>
               </select>
         </div>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label"> Ingrese nombre del proyecto </label>
-          <input type="text" class="form-control" placeholder="Ejemplo"/>
+          <input type="text" class="form-control" placeholder="Ejemplo" formControlName="titulo"/>
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label"> Ingrese descripcion</label>
-            <textarea class="form-control" rows="3"></textarea>
+            <textarea class="form-control" rows="3" formControlName="descripcion"></textarea>
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label"> Ingrese URL del proyecto</label>
-            <input type="text" class="form-control" placeholder="ejemplo"/>
+            <input type="text" class="form-control" placeholder="ejemplo" formControlName="url"/>
           </div>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Seleccione logo</label>
-            <input type="file" class="form-control"
-          />
+            <label for="exampleInputEmail1" class="form-label">Ingrese url de la imagen</label>
+            <input type="text" class="form-control"formControlName="imgUrl"/>
           </div>
       </form>
     </div>
     <div class="modal-footer">
-      <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+      <button type="submit" (click)="editar()" [disabled]="editarProyecto.invalid" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
     </div>
   </div>
 </div>

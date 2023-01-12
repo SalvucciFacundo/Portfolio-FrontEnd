@@ -13,7 +13,7 @@ export class NombreModalComponent implements OnInit {
 
   persona:Person= new Person("","","","","",0,"","","","",);
   editarNombre:FormGroup;
-  per:any;
+  //per:any;
 
   constructor(private fb: FormBuilder, private personSvc: PersonService, private toast: NgToastService) { 
     this.editarNombre = this.fb.group({
@@ -45,19 +45,21 @@ export class NombreModalComponent implements OnInit {
      profileUrl:this.persona.profileUrl
     }
      this.personSvc.editPerson(1,persona).subscribe(data=>{
-      this.per=data;
-       //console.log(data)
+      setTimeout(
+             function(){ 
+            window.location.reload(); 
+             }, 2000);
+           this.toast.success({detail:'Exito',summary:'Actualizado correctamente',sticky:true,position:'tr'})
+      
+     },err=>{
+      setTimeout(
+             function(){ 
+            window.location.reload(); 
+             }, 2000);
+           this.toast.error({detail:'Error',summary:'Error al actualizar',sticky:true,position:'tr'});
      });
-    //console.log(persona);
-if(this.per== "persona actualizada"){
-    setTimeout(
-      function(){ 
-      window.location.reload(); 
-      }, 3000);
-    this.toast.success({detail:'Exito',summary:'Actualizado correctamente',sticky:true,position:'tr'})
-  }else{
-    this.toast.error({detail:'Error',summary:'Error al actualizar',sticky:true,position:'tr'});
-  }
+   
+
 }
 
   

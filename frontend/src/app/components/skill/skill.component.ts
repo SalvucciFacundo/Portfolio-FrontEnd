@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SkillService } from 'src/app/services/skill.service';
 
-export interface Skill {
-  nombre:string;
-  valor:string;
-}
 
 @Component({
   selector: 'app-skill',
@@ -12,29 +9,25 @@ export interface Skill {
 })
 export class SkillComponent implements OnInit {
 
-  hardSkill : Skill[]=[
-    {nombre:'HTML',valor:'80%'},
-    {nombre:'CSS',valor:'50%'},
-    {nombre:'JavaScript',valor:'40%'},
-    {nombre:'Bootstrap',valor:'55%'},
-    {nombre:'Angular',valor:'75%'},
-    {nombre:'Node.JS',valor:'65%'},
-    {nombre:'MongoDB',valor:'45%'},
-    {nombre:'Express',valor:'40%'},
-  ];
-  softSkill : Skill[]=[
-    {nombre:'Comunicacion',valor:'90%'},
-    {nombre:'Trabajo en equipo',valor:'80%'},
-    {nombre:'Resolucion de problemas',valor:'75%'},
-    {nombre:'Ingles',valor:'70%'},
-    {nombre:'Adaptación al cambio',valor:'80%'},
-    {nombre:'Resolución de problemas',valor:'60%'},
-  ];
+ 
+  skillHard:any;
   usuarioLogeado:any;
-  constructor() { }
+
+  skillSoft:any;
+
+  constructor(private skillSvc:SkillService) { }
 
   ngOnInit(): void {
     this.usuarioLogeado=localStorage.getItem('logeado');
+    this.skillSvc.getType('hard').subscribe(data=>{
+      this.skillHard=data;
+    })
+      this.skillSvc.getType('soft').subscribe(data=>{
+        this.skillSoft=data;
+      })
+
+
+
   }
 
 }

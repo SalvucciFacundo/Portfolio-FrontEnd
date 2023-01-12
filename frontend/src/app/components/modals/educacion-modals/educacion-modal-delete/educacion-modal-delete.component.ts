@@ -35,17 +35,18 @@ edu:any;
 
   eliminar(){
     this.educSvc.deleteEducation(this.eliminarEducacion.value.seleccion).subscribe(data =>{
-      this.edu=data;
-    })
-    if(this.edu == "El registro ha sido eliminado"){
       setTimeout(
         function(){ 
         window.location.reload(); 
-        }, 3000);
-      this.toast.success({detail:'Exito',summary:'Eliminado correctamente',sticky:true,position:'tr'})
-    }else{
-      this.toast.error({detail:'Error',summary:'Error al eliminar',sticky:true,position:'tr'});
-    }
+        }, 2000);
+        this.toast.success({detail:'Exito',summary:'Eliminado correctamente',sticky:true,position:'tr'})
+    },err=>{
+      setTimeout(
+        function(){ 
+        window.location.reload(); 
+        }, 2000);
+        this.toast.error({detail:'Error',summary:'Error al eliminar',sticky:true,position:'tr'});
+    })
   }
 
 }

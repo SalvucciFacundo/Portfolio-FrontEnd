@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NgToastService } from 'ng-angular-popup';
+import { SkillService } from 'src/app/services/skill.service';
 export interface Skill {
   nombre:string;
   valor:string;
@@ -9,27 +12,36 @@ export interface Skill {
   styleUrls: ['./skill-modal-delete.component.css']
 })
 export class SkillModalDeleteComponent implements OnInit {
-  hardSkill : Skill[]=[
-    {nombre:'HTML',valor:'80%'},
-    {nombre:'CSS',valor:'50%'},
-    {nombre:'JavaScript',valor:'40%'},
-    {nombre:'Bootstrap',valor:'55%'},
-    {nombre:'Angular',valor:'75%'},
-    {nombre:'Node.JS',valor:'65%'},
-    {nombre:'MongoDB',valor:'45%'},
-    {nombre:'Express',valor:'40%'},
-  ];
-  softSkill : Skill[]=[
-    {nombre:'Comunicacion',valor:'90%'},
-    {nombre:'Trabajo en equipo',valor:'80%'},
-    {nombre:'Resolucion de problemas',valor:'75%'},
-    {nombre:'Ingles',valor:'70%'},
-    {nombre:'Adaptación al cambio',valor:'80%'},
-    {nombre:'Resolución de problemas',valor:'60%'},
-  ];
-  constructor() { }
+  
+  skill:any;
+  elimnarSkill:FormGroup
+  ;
+  constructor(private skillSvc: SkillService, private toast: NgToastService ,private fb: FormBuilder) { 
+    this.elimnarSkill = this.fb.group({
+      seleccion: ['',Validators.required],
+    })
+  }
 
   ngOnInit(): void {
+    this.skillSvc.getAllSkills().subscribe(data=>{
+      this.skill=data;
+    })
+  }
+
+  eliminar(){
+    this.skillSvc.deleteSkill(this.elimnarSkill.value.seleccion).subscribe(data=>{
+      setTimeout(
+        function(){ 
+        window.location.reload(); 
+        }, 2000);
+      this.toast.success({detail:'Exito',summary:'Eliminado correctamente',sticky:true,position:'tr'})
+    },err=>{
+      setTimeout(
+        function(){ 
+        window.location.reload(); 
+        }, 2000);
+      this.toast.error({detail:'Error',summary:'Error al eliminar',sticky:true,position:'tr'});
+    })
   }
 
 }

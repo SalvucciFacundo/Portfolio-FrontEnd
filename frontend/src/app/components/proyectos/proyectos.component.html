@@ -12,20 +12,20 @@
             <i class="fa-solid fa-trash fa-2x" style="color:red;"></i>
           </a>
         </div>
-        <div class="row mt-3">
-          <div class="col-auto" *ngFor="let item of proyec">
+        <div class="row mt-4">
+          <div class="col-auto" *ngFor="let item of proyectos">
             <div class="card mt-3" style="width: 25rem;">
               <img
-                src="{{item.imagen}}"
+                src="{{item.imgUrl}}"
                 class="card-img-top"
                 alt="..."
               />
               <div class="card-body">
-                <h5 class="card-title">{{item.nombre}}</h5>
+                <h5 class="card-title">{{item.title}}</h5>
                 <p class="card-text">
-                  {{item.descripcion}}
+                  {{item.description}}
                 </p>
-                <a href="{{item.url}}" class="btn btn-primary">Visitar</a>
+                <a href="{{item.url}}" class="btn btn-primary" style="align-items: center;">Visitar</a>
               </div>
             </div>
           </div>

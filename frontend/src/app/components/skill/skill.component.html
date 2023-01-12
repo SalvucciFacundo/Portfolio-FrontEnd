@@ -13,44 +13,45 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-md-6" *ngFor="let items of hardSkill">
-        <h4 class="progress-title text-center">{{items.nombre}}</h4>
+      <div class="col-md-6 " *ngFor="let items of skillHard">
+        <h4 class="progress-title text-center">{{items.name}}</h4>
         <div class="progress-outer">
           <div class="progress">
             <div
               class="progress-bar progress-bar-primary progress-bar-striped bg-primary active"
               
-              [ngStyle]="{'width': items.valor,'box-shadow':'-1px 10px 10px rgba(7, 38, 192, 0.7)'}"
+              [ngStyle]="{'width': items.value,'box-shadow':'-1px 10px 10px rgba(7, 38, 192, 0.7)'}"
               >
             </div>
-            <div class="progress-value">{{items.valor}}</div>
+            <div class="progress-value">{{items.value}}</div>
           </div>
         </div>
       </div>
     </div>
+    </div>
   </div>
-</div>
 
 <div class="container mt-5">
   <h3 class="textoFondo mb-3"><b>Soft Skill</b></h3>
   <div class="container">
     <div class="row">
-      <div class="col-md-6" *ngFor="let items of softSkill">
-        <h4 class="progress-title text-center">{{items.nombre}}</h4>
+      <div class="col-md-6" *ngFor="let items of skillSoft">
+        <h4 class="progress-title text-center">{{items.name}}</h4>
         <div class="progress-outer">
            <div class="progress">
             <div
               class="progress-bar progress-bar-success progress-bar-striped bg-success active"
-              [ngStyle]="{'width': items.valor,'box-shadow':'-1px 10px 10px rgba(116, 195, 116, 0.7)'}"
+              [ngStyle]="{'width': items.value,'box-shadow':'-1px 10px 10px rgba(116, 195, 116, 0.7)'}"
               >
             </div>
-            <div class="progress-value">{{items.valor}}</div>
+            <div class="progress-value">{{items.value}}</div>
           </div>
         </div>
       </div>
+     </div>
     </div>
   </div>
-</div>
+
 
 <app-skill-modal-add></app-skill-modal-add>
 <app-skill-modal-edit></app-skill-modal-edit>

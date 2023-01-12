@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgToastService } from 'ng-angular-popup';
 import { Educacion } from 'src/app/models/educacion.model';
 import { EducacionService } from 'src/app/services/educacion.service';
-import { PersonService } from 'src/app/services/person.service';
 
 @Component({
   selector: 'app-educacion-modal-add',
@@ -41,19 +40,18 @@ export class EducacionModalAddComponent implements OnInit {
     }
     
     this.educSvc.createEducation(educacion).subscribe(data =>{
-      this.edu=data;
-      //console.log(data);
-     // console.log('Probando educacion '+ educacion)
-    });
-    if(this.edu == "Registro creado correctamente"){
       setTimeout(
         function(){ 
         window.location.reload(); 
-        }, 3000);
+        }, 2000);
       this.toast.success({detail:'Exito',summary:'Creado correctamente',sticky:true,position:'tr'})
-    }else{
-      this.toast.error({detail:'Error',summary:'Error al crear',sticky:true,position:'tr'});
-    }
+    },err=>{
+      setTimeout(
+        function(){ 
+        window.location.reload(); 
+        }, 2000);
+        this.toast.error({detail:'Error',summary:'Error al crear',sticky:true,position:'tr'});
+    });
   }
 
 }

@@ -19,31 +19,31 @@ aria-hidden="true"
       ></button>
     </div>
     <div class="modal-body">
-      <form>
+      <form [formGroup]="loginForm">
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"
+          <label class="form-label"
             >Usuario</label
           >
           <input
             type="email"
             class="form-control"
-            placeholder="ejemplo@ejemplo.com"
+            placeholder="ejemplo@ejemplo.com" formControlName="email"
           />
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label"
+          <label class="form-label"
             >Contraseña</label
           >
           <input
             type="password"
-            class="form-control"
+            class="form-control" formControlName="password"
           />
         </div>
       </form>
     </div>
     <div class="modal-footer">
-      <i>Si no tienens cuenta <a href="" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#registro">registrate</a></i>
-      <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)="logear()">Ingresar</button>
+       <i>Si no tienens cuenta <a href="" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#registro">registrate</a></i>
+      <button type="submit" (click)="logear()"[disabled]="loginForm.invalid" class="btn btn-primary" data-bs-dismiss="modal">Ingresar</button>
     </div>
   </div>
 </div>

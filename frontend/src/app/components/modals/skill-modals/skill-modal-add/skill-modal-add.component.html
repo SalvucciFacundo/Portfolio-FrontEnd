@@ -19,20 +19,27 @@ aria-hidden="true"
       ></button>
     </div>
     <div class="modal-body">
-      <form >
+      <form [formGroup]="crearSkill">
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label"> Ingrese nombre de la skill </label>
-          <input type="text" class="form-control" placeholder="Ejemplo"/>
+          <input type="text" class="form-control" placeholder=".NET" formControlName="nombre"/>
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label"> Ingrese valor </label>
-            <input type="text" class="form-control" placeholder="90"/>
-          </div>
-
+            <input type="text" class="form-control" placeholder="90" formControlName="valor"/>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Seleccione tipo de habilidad </label>
+          <select class="form-select" aria-label="Default select example" formControlName="tipo">
+              <option selected >Seleccione </option>
+              <option value="soft">Soft</option>
+              <option value="hard">Hard</option>
+            </select>
+      </div>
       </form>
     </div>
     <div class="modal-footer">
-      <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+      <button type="submit" (click)="crear()" [disabled]="crearSkill.invalid" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
     </div>
   </div>
 </div>
