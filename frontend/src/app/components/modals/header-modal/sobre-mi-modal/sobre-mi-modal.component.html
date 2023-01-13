@@ -21,8 +21,8 @@ aria-hidden="true"
     <div class="modal-body">
       <form [formGroup]="editarSobre">
         <div class="mb-3">
-          <label class="form-label">Ingrese Datos </label>
-          <textarea class="form-control" rows="3"  formControlName="sobreMi"></textarea>
+          <label class="form-label">Ingrese descripción </label>
+          <textarea class="form-control" rows="3" placeholder="Sobre mi"  formControlName="sobreMi"></textarea>
         </div>
         <div class="mb-3">
           <label class="form-label"
@@ -32,6 +32,7 @@ aria-hidden="true"
             type="text"
             class="form-control"
             formControlName="correo"
+            placeholder="usuario@usuario.com"
           />
         </div>
         <div class="mb-3">
@@ -42,6 +43,7 @@ aria-hidden="true"
             type="text"
             class="form-control"
             formControlName="nacimiento"
+            placeholder="01/01/0001"
           />
         </div>
         <div class="mb-3">
@@ -52,6 +54,7 @@ aria-hidden="true"
             type="text"
             class="form-control"
             formControlName="nacionalidad"
+            placeholder="Argentino"
           />
         </div>
         <div class="mb-3">
@@ -62,6 +65,7 @@ aria-hidden="true"
             type="text"
             class="form-control"
             formControlName="telefono"
+            
           />
         </div>
       </form>

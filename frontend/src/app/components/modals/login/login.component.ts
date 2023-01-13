@@ -25,30 +25,30 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
   logear(){
-    const user: Users ={
+
+    const user:Users={
       email:this.loginForm.value.email,
       password:this.loginForm.value.password
     }
-    
-      this.authService.login(user).subscribe(data=>{
-        localStorage.setItem('logeado', 'true');
-        const token = this.authService.getToken();
-        if(token){
-          setTimeout(
-            function(){ 
-        window.location.reload(); 
-            }, 2000);
-          this.toast.success({detail:'Exito',summary:'Bienvenido',sticky:true,position:'tr'})
-        }else{
-          setTimeout(
-            function(){ 
-            window.location.reload(); 
-            }, 2000);
-          this.toast.error({detail:'Error',summary:'Usuario o password incorrectos',sticky:true,position:'tr'});
-        }
-     })
+    this.authService.login(user).subscribe(data=>{
+      localStorage.setItem('logeado', 'true');
+      setTimeout(
+       function(){ 
+         window.location.reload(); 
+             },2000);
+         this.toast.success({detail:'Exito',summary:'Bienvenido',sticky:true,position:'tr'})
+    },err=>{
+      localStorage.setItem('logeado', 'false');
+      setTimeout(
+       function(){ 
+         window.location.reload(); 
+             },2000);
+         this.toast.success({detail:'Error',summary:'Usuario o password incorrectos',sticky:true,position:'tr'})
+    })
+   
   }
+
+
   
 }

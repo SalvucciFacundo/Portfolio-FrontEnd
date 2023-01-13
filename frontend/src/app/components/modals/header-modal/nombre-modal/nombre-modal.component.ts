@@ -13,7 +13,7 @@ export class NombreModalComponent implements OnInit {
 
   persona:any;
   editarNombre:FormGroup;
-  //per:any;
+
 
   constructor(private fb: FormBuilder, private personSvc: PersonService, private toast: NgToastService) { 
     this.editarNombre = this.fb.group({
@@ -24,9 +24,9 @@ export class NombreModalComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.personSvc.getAllPerson().subscribe(data =>{
+    this.personSvc.getPerson(1).subscribe(data =>{
       this.persona=data;
-      //console.log(data)
+      
     })
   }
 

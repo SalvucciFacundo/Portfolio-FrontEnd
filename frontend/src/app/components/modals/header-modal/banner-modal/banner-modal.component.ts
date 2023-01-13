@@ -12,7 +12,6 @@ import { PersonService } from 'src/app/services/person.service';
 export class BannerModalComponent implements OnInit {
   persona:any;
   editarBanner:FormGroup;
-  per:any;
 
   constructor(private fb: FormBuilder, private personSvc: PersonService, private toast: NgToastService) { 
     this.editarBanner = this.fb.group({
@@ -21,13 +20,12 @@ export class BannerModalComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.personSvc.getAllPerson().subscribe(data =>{
+    this.personSvc.getPerson(1).subscribe(data =>{
       this.persona=data;
     })
   }
 
   editar(){
-    
     const persona:Person ={
      name: this.persona.name,
      lastName: this.persona.lastName,

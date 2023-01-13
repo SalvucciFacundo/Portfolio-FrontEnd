@@ -13,7 +13,7 @@ export class SobreMiModalComponent implements OnInit {
 
   persona:any;
   editarSobre:FormGroup;
-  per:any;
+  
   
   constructor(private fb: FormBuilder, private personSvc: PersonService, private toast: NgToastService) { 
     this.editarSobre = this.fb.group({
@@ -26,7 +26,7 @@ export class SobreMiModalComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.personSvc.getAllPerson().subscribe(data =>{
+    this.personSvc.getPerson(1).subscribe(data =>{
       this.persona=data;
       
     })
@@ -39,7 +39,7 @@ export class SobreMiModalComponent implements OnInit {
      lastName: this.persona.lastName,
      title: this.persona.title,
      birth:this.editarSobre.value.nacimiento,
-     email:this.editarSobre.value.email,
+     email:this.editarSobre.value.correo,
      phone:this.editarSobre.value.telefono,
      nationality:this.editarSobre.value.nacionalidad,
      aboutMe:this.editarSobre.value.sobreMi,

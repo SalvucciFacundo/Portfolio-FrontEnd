@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 import { Person } from '../models/person.model';
 
 @Injectable({
@@ -9,12 +9,12 @@ import { Person } from '../models/person.model';
 })
 export class PersonService {
 
-  URL = environment.URL + 'person';
-
+  //URL ="http://back-end-portafolio-production-8f53.up.railway.app/api" + '/person';
+  URL=environment.URL;
   constructor(private http:HttpClient) { }
 
-  public getAllPerson():Observable<Person[]>{
-    return this.http.get<Person[]>(this.URL+'/all');
+  public getAllPerson():Observable<any>{
+    return this.http.get<any>(this.URL+'/all');
   }
 
   public getPerson(id:number):Observable<Person>{

@@ -19,6 +19,7 @@ export class SkillComponent implements OnInit {
 
   ngOnInit(): void {
     this.usuarioLogeado=localStorage.getItem('logeado');
+
     this.skillSvc.getType('hard').subscribe(data=>{
       this.skillHard=data;
     })

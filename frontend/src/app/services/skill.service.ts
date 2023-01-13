@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 import { Skills } from '../models/skills.model';
 
 @Injectable({
@@ -9,8 +9,8 @@ import { Skills } from '../models/skills.model';
 })
 export class SkillService {
 
-  URL = environment.URL + 'skills';
-
+ // URL ="http://back-end-portafolio-production-8f53.up.railway.app/api"  + '/skills';
+ URL=environment.URL;
   constructor(private http:HttpClient) { }
 
   public getType(tipo:string):Observable<Skills[]>{

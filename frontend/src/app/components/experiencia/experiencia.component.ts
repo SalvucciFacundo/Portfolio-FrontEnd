@@ -17,6 +17,7 @@ export class ExperienciaComponent implements OnInit {
 
   ngOnInit(): void {
     this.usuarioLogeado=localStorage.getItem('logeado');
+
     this.expeSvc.getAllExperiences().subscribe(data =>{
       this.experiencia=data;
     })

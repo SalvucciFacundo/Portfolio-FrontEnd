@@ -12,7 +12,7 @@ import { PersonService } from 'src/app/services/person.service';
 export class ImgPerfilModalComponent implements OnInit {
   persona:any;
   editarPerfil:FormGroup;
-  per:any;
+
 
   constructor(private fb: FormBuilder, private personSvc: PersonService, private toast: NgToastService) { 
     this.editarPerfil = this.fb.group({
@@ -21,9 +21,8 @@ export class ImgPerfilModalComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.personSvc.getAllPerson().subscribe(data =>{
+    this.personSvc.getPerson(1).subscribe(data =>{
       this.persona=data;
-      //console.log(data)
     })
   }
 

@@ -1,15 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 import { Proyectos } from '../models/proyectos.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProyectoService {
-  URL = environment.URL + 'project';
-
+  //URL ="http://back-end-portafolio-production-8f53.up.railway.app/api"  + '/project';
+  URL=environment.URL;
   constructor(private http:HttpClient) { }
 
   public getProject(id:number):Observable<Proyectos>{

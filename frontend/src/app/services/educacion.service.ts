@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 import { Educacion } from '../models/educacion.model';
 
 @Injectable({
@@ -9,7 +9,8 @@ import { Educacion } from '../models/educacion.model';
 })
 export class EducacionService {
 
-  URL = environment.URL + 'education';
+  //URL ="http://back-end-portafolio-production-8f53.up.railway.app/api" + '/education';
+  URL=environment.URL;
   constructor(private http:HttpClient) { }
 
   public getEducation(id:number):Observable<Educacion>{
@@ -17,8 +18,8 @@ export class EducacionService {
     return this.http.get<Educacion>(this.URL+`/${id}`);
    }
 
-  public getAllEducation():Observable<Educacion[]>{
-    return this.http.get<Educacion[]>(this.URL+'/all');
+  public getAllEducation():Observable<any>{
+    return this.http.get<any>(this.URL+'/all');
   }
 
   public createEducation(educacion: Educacion):Observable<any>{
