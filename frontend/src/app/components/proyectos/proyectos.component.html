@@ -12,20 +12,24 @@
             <i class="fa-solid fa-trash fa-2x" style="color:red;"></i>
           </a>
         </div>
-        <div class="row mt-4">
+        <div class="row mt-4 tarjeta">
           <div class="col-auto" *ngFor="let item of proyectos">
-            <div class="card mt-3" style="width: 25rem;">
+            <div class="card mt-3" style="width: 26rem;">
               <img
                 src="{{item.imgUrl}}"
-                class="card-img-top"
+                class="card-img-top imagen"
                 alt="..."
+                
               />
-              <div class="card-body">
+              <div class="card-body cuerpo fondo">
                 <h5 class="card-title">{{item.title}}</h5>
                 <p class="card-text">
                   {{item.description}}
                 </p>
-                <a href="{{item.url}}" class="btn btn-primary" style="align-items: center;">Visitar</a>
+                
+              </div>
+              <div class="card-footer boton">
+                <a href="{{item.url}}" target="_blank" class="btn btn-lg btn-primary ">Visitar</a>
               </div>
             </div>
           </div>

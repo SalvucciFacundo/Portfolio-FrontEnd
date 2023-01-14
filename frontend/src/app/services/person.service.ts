@@ -9,8 +9,8 @@ import { Person } from '../models/person.model';
 })
 export class PersonService {
 
-  //URL ="http://back-end-portafolio-production-8f53.up.railway.app/api" + '/person';
-  URL=environment.URL;
+  URL ="http://back-end-portafolio-production-8f53.up.railway.app/api" + '/person';
+  
   constructor(private http:HttpClient) { }
 
   public getAllPerson():Observable<any>{

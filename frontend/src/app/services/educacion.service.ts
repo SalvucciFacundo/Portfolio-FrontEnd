@@ -9,8 +9,8 @@ import { Educacion } from '../models/educacion.model';
 })
 export class EducacionService {
 
-  //URL ="http://back-end-portafolio-production-8f53.up.railway.app/api" + '/education';
-  URL=environment.URL;
+  URL ="http://back-end-portafolio-production-8f53.up.railway.app/api" + '/education';
+ 
   constructor(private http:HttpClient) { }
 
   public getEducation(id:number):Observable<Educacion>{

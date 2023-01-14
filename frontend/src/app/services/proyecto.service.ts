@@ -8,8 +8,8 @@ import { Proyectos } from '../models/proyectos.model';
   providedIn: 'root'
 })
 export class ProyectoService {
-  //URL ="http://back-end-portafolio-production-8f53.up.railway.app/api"  + '/project';
-  URL=environment.URL;
+  URL ="http://back-end-portafolio-production-8f53.up.railway.app/api"  + '/project';
+
   constructor(private http:HttpClient) { }
 
   public getProject(id:number):Observable<Proyectos>{

@@ -9,8 +9,8 @@ import { Skills } from '../models/skills.model';
 })
 export class SkillService {
 
- // URL ="http://back-end-portafolio-production-8f53.up.railway.app/api"  + '/skills';
- URL=environment.URL;
+  URL ="http://back-end-portafolio-production-8f53.up.railway.app/api"  + '/skills';
+ 
   constructor(private http:HttpClient) { }
 
   public getType(tipo:string):Observable<Skills[]>{

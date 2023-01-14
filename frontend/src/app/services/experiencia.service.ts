@@ -7,8 +7,8 @@ import { Experiencias } from '../models/experiencias.model';
   providedIn: 'root'
 })
 export class ExperienciaService {
- // URL ="http://back-end-portafolio-production-8f53.up.railway.app/api"  + '/experience';
- URL=environment.URL;
+  URL ="http://back-end-portafolio-production-8f53.up.railway.app/api"  + '/experience';
+ 
   constructor(private http:HttpClient) { }
 
   public getExperience(id:number):Observable<Experiencias>{

@@ -5,3 +5,26 @@
 .editarNombre{
     text-align: end;
 }
+.imagen{
+    min-height: 15rem;
+    max-height: 15rem;
+    
+}
+.cuerpo{
+    min-height: 10rem;
+    max-height: 10rem;
+   
+}
+.boton{
+    align-self: center;
+    background: none;
+    border: none;
+}
+.fondo{
+    background: #C9D6FF;
+    background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);
+    background: linear-gradient(to right, #E2E2E2, #C9D6FF); 
+}
+.tarjeta{
+    align-items: center;
+}

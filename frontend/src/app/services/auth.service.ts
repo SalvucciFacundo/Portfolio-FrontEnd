@@ -8,9 +8,8 @@ import { Users } from '../models/users';
   providedIn: 'root'
 })
 export class AuthService {
-  URL=environment.URL;
   
- // URL ="http://back-end-portafolio-production-8f53.up.railway.app/api"  + '/auth';
+  URL ="http://back-end-portafolio-production-8f53.up.railway.app/api"  + '/auth';
   
 
   constructor(private http: HttpClient) { }
@@ -21,7 +20,8 @@ export class AuthService {
 
   public login(user:Users):Observable<any>{
     return this.http.post<any>(this.URL+'/login',user);
+   
   }
-
+  
 
 }

@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
        function(){ 
          window.location.reload(); 
              },2000);
-         this.toast.success({detail:'Error',summary:'Usuario o password incorrectos',sticky:true,position:'tr'})
+         this.toast.error({detail:'Error',summary:'Usuario o password incorrectos',sticky:true,position:'tr'})
     })
    
   }
